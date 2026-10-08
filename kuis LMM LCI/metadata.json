@@ -1,0 +1,6 @@
+{
+  "name": "Cek Eco-Persona Kamu! - Langkah Membumi Market",
+  "description": "Kuis kepribadian singkat ramah lingkungan untuk event Langkah Membumi Market oleh Lifecycle Indonesia (LCI).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

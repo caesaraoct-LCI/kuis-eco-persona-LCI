@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <!-- Multi-stop vortex gradient from Cyan Blue to Fresh Leaf Green -->
+    <linearGradient id="vortexGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#0288D1"/>
+      <stop offset="25%" stop-color="#00AEEF"/>
+      <stop offset="55%" stop-color="#00BFA5"/>
+      <stop offset="80%" stop-color="#7CB342"/>
+      <stop offset="100%" stop-color="#8BC34A"/>
+    </linearGradient>
+
+    <linearGradient id="blueArcGrad" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#0277BD"/>
+      <stop offset="100%" stop-color="#00B4D8"/>
+    </linearGradient>
+
+    <linearGradient id="greenArcGrad" x1="0%" y1="50%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#43A047"/>
+      <stop offset="100%" stop-color="#8BC34A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean circular background badge -->
+  <circle cx="120" cy="120" r="118" fill="#FFFFFF"/>
+
+  <!-- Swirling Vortex (PT Life Cycle Indonesia) -->
+  <g transform="translate(120, 120)">
+    
+    <!-- Outer dashed swirls and vortex arcs -->
+    <!-- Top Blue/Cyan Arcs -->
+    <path d="M -90 -15 C -92 -65 -50 -105 10 -105 C 65 -105 102 -68 104 -10" fill="none" stroke="#0099DD" stroke-width="6.5" stroke-linecap="round" stroke-dasharray="75 14 30 14"/>
+    <path d="M -75 5 C -78 -38 -42 -90 12 -90 C 55 -90 88 -55 90 -5" fill="none" stroke="#00AEEF" stroke-width="6" stroke-linecap="round" stroke-dasharray="60 16 45 15"/>
+    <path d="M -60 15 C -65 -20 -30 -75 15 -75 C 48 -75 74 -40 76 0" fill="none" stroke="#00B4D8" stroke-width="5.5" stroke-linecap="round"/>
+
+    <!-- Bottom Green / Lime Arcs -->
+    <path d="M 90 15 C 92 65 50 105 -10 105 C -65 105 -102 68 -104 10" fill="none" stroke="#689F38" stroke-width="6.5" stroke-linecap="round" stroke-dasharray="75 14 30 14"/>
+    <path d="M 75 -5 C 78 38 42 90 -12 90 C -55 90 -88 55 -90 5" fill="none" stroke="#7CB342" stroke-width="6" stroke-linecap="round" stroke-dasharray="60 16 45 15"/>
+    <path d="M 60 -15 C 65 20 30 75 -15 75 C -48 75 -74 40 -76 0" fill="none" stroke="#8BC34A" stroke-width="5.5" stroke-linecap="round"/>
+
+    <!-- Transitionary swirls & spiral trails -->
+    <circle cx="0" cy="0" r="102" fill="none" stroke="url(#vortexGrad)" stroke-width="4" stroke-linecap="round" stroke-dasharray="18 20 40 18 10 22" transform="rotate(-15)"/>
+    <circle cx="0" cy="0" r="95" fill="none" stroke="url(#vortexGrad)" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="24 16 65 20 12 18" transform="rotate(35)"/>
+    <circle cx="0" cy="0" r="82" fill="none" stroke="url(#vortexGrad)" stroke-width="5" stroke-linecap="round" stroke-dasharray="35 18 85 24 18 16" transform="rotate(-70)"/>
+    <circle cx="0" cy="0" r="68" fill="none" stroke="url(#vortexGrad)" stroke-width="5" stroke-linecap="round" stroke-dasharray="50 20 70 22" transform="rotate(110)"/>
+    <circle cx="0" cy="0" r="56" fill="none" stroke="url(#vortexGrad)" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="60 22 50 18" transform="rotate(-30)"/>
+
+    <!-- Center White Disc for LCI Text -->
+    <circle cx="0" cy="0" r="44" fill="#FFFFFF"/>
+
+    <!-- LCI Center Text -->
+    <text x="0" y="14" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, -apple-system, sans-serif" font-size="42" font-weight="800" fill="#4B4B4B" letter-spacing="-0.8">LCI</text>
+  </g>
+</svg>

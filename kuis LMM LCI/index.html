@@ -1,0 +1,1362 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Cek Eco-Persona Kamu! - Langkah Membumi Market | Lifecycle Indonesia</title>
+  <meta name="description" content="Kuis kepribadian singkat ramah lingkungan untuk event Langkah Membumi Market oleh Lifecycle Indonesia (LCI). Temukan eco-persona kamu sekarang!" />
+  <meta property="og:title" content="Cek Eco-Persona Kamu! - Langkah Membumi Market" />
+  <meta property="og:description" content="Ikuti kuis singkat ini dan cek apakah kamu Si Paling Green Flag, Sobat Eco-Tanggung, atau Kaum Eco-Khilaf!" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       RESET & ROOT VARIABLES (Brand Palette LCI & Langkah Membumi)
+       ========================================================= */
+    :root {
+      --teal-dark: #064049;       /* Biru Kehijauan Gelap / Deep Oceanic Teal */
+      --teal-navy: #042D34;
+      --teal-primary: #0A6C74;    /* Teal Utama Brand */
+      --teal-light: #00ACC1;      /* Bright Cyan / Biru Kehijauan Terang */
+      --teal-vibrant: #0294A6;
+      --leaf-green: #38A169;      /* Hijau Daun Alami */
+      --leaf-bright: #48BB78;
+      --leaf-light: #E8F5E9;
+      --mint-surface: #E6F8F6;
+      --bg-cream: #F3F8F8;
+      --white: #FFFFFF;
+      --text-dark: #0B2529;
+      --text-muted: #4A6B6F;
+      --border-soft: #D6E8E7;
+      --accent-yellow: #FFB703;
+      --shadow-sm: 0 2px 8px rgba(6, 64, 73, 0.06);
+      --shadow-md: 0 10px 25px -4px rgba(6, 64, 73, 0.09), 0 4px 10px -2px rgba(6, 64, 73, 0.05);
+      --shadow-lg: 0 20px 35px -8px rgba(6, 64, 73, 0.15), 0 10px 18px -4px rgba(6, 64, 73, 0.08);
+      --radius-sm: 12px;
+      --radius-md: 18px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      --transition-normal: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-cream);
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 172, 193, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(56, 161, 105, 0.08) 0%, transparent 40%),
+        linear-gradient(to bottom, #F3F8F8 0%, #E9F4F3 100%);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    /* Container Mobile-First */
+    .app-viewport {
+      width: 100%;
+      max-width: 480px;
+      min-height: 100vh;
+      background: #FFFFFF;
+      box-shadow: 0 0 50px rgba(6, 64, 73, 0.1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    @media (min-width: 481px) {
+      body {
+        padding: 24px 16px;
+      }
+      .app-viewport {
+        min-height: calc(100vh - 48px);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid rgba(10, 108, 116, 0.12);
+      }
+    }
+
+    /* =========================================================
+       HEADER & EVENT BRANDING
+       ========================================================= */
+    .app-header {
+      background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-primary) 100%);
+      color: var(--white);
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 4px 12px rgba(6, 64, 73, 0.12);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand-tag-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo-circle {
+      width: 36px;
+      height: 36px;
+      background: #FFFFFF;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+      border: 1.5px solid rgba(255, 255, 255, 0.5);
+      flex-shrink: 0;
+      padding: 2px;
+      overflow: hidden;
+    }
+
+    .brand-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: var(--radius-full);
+      display: block;
+    }
+
+    .brand-icon-circle {
+      width: 36px;
+      height: 36px;
+      background: #FFFFFF;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+      border: 1.5px solid rgba(255, 255, 255, 0.5);
+      flex-shrink: 0;
+      padding: 2px;
+      overflow: hidden;
+    }
+
+    .brand-text-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .event-badge {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #A7F3D0;
+    }
+
+    .app-title-header {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .header-pill {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-full);
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    /* Progress Bar */
+    .progress-section {
+      margin-top: 12px;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 6px;
+    }
+
+    .progress-bar-track {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #A7F3D0 0%, #34D399 50%, #00E676 100%);
+      border-radius: var(--radius-full);
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 8px rgba(52, 211, 153, 0.6);
+    }
+
+    /* =========================================================
+       MAIN CONTENT CONTAINER
+       ========================================================= */
+    .app-main {
+      flex: 1;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow-y: auto;
+    }
+
+    /* Transitions & Animated View */
+    .view-container {
+      display: none;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      width: 100%;
+    }
+
+    .view-container.active {
+      display: flex;
+      flex-direction: column;
+      opacity: 1;
+      transform: translateY(0);
+      animation: slideInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================================================
+       INTRO / WELCOME VIEW
+       ========================================================= */
+    .welcome-card {
+      background: linear-gradient(180deg, var(--mint-surface) 0%, #FFFFFF 100%);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 28px 22px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .welcome-card::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(0, 172, 193, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .mascot-avatar-hero {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 16px auto;
+      border-radius: 50%;
+      background: #FFFFFF;
+      box-shadow: 0 10px 24px rgba(6, 64, 73, 0.12);
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border: 3px solid var(--mint-surface);
+    }
+
+    .mascot-avatar-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .welcome-tag {
+      display: inline-block;
+      background: #D1FAE5;
+      color: #065F46;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    .welcome-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--teal-dark);
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .welcome-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .feature-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .feature-pill {
+      background: #FFFFFF;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--teal-dark);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .feature-pill span {
+      font-size: 18px;
+    }
+
+    /* Primary Buttons */
+    .btn-primary {
+      width: 100%;
+      background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-vibrant) 100%);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(10, 108, 116, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all var(--transition-normal);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(10, 108, 116, 0.35);
+      background: linear-gradient(135deg, #08555C 0%, #00A3C4 100%);
+    }
+
+    .btn-primary:active {
+      transform: translateY(1px);
+      box-shadow: 0 4px 10px rgba(10, 108, 116, 0.2);
+    }
+
+    /* =========================================================
+       QUESTION CARD & OPTIONS
+       ========================================================= */
+    .question-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+    }
+
+    .question-header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .q-step-badge {
+      align-self: flex-start;
+      background: var(--mint-surface);
+      color: var(--teal-primary);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .q-step-badge::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--leaf-green);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .question-text {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--teal-dark);
+      line-height: 1.4;
+    }
+
+    /* Options List */
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option-btn {
+      width: 100%;
+      background: #FFFFFF;
+      border: 2px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 16px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      color: var(--text-dark);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.45;
+      transition: all 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .option-btn:hover {
+      border-color: var(--teal-light);
+      background: #F4FBFC;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 172, 193, 0.14);
+    }
+
+    .option-btn:active {
+      transform: scale(0.99);
+    }
+
+    .option-btn.selected {
+      border-color: var(--teal-primary);
+      background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-primary) 100%);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(10, 108, 116, 0.32);
+    }
+
+    /* Option Badge (A, B, C) */
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--mint-surface);
+      border: 2px solid var(--teal-primary);
+      color: var(--teal-primary);
+      font-size: 15px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .option-btn:hover .option-letter {
+      background: var(--teal-primary);
+      color: var(--white);
+    }
+
+    .option-btn.selected .option-letter {
+      background: #FFFFFF;
+      border-color: #FFFFFF;
+      color: var(--teal-primary);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .option-btn.selected .option-letter::after {
+      content: "✓";
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 18px;
+      height: 18px;
+      background: #34D399;
+      color: #064049;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--white);
+    }
+
+    .option-text {
+      flex: 1;
+    }
+
+    /* =========================================================
+       RESULT PAGE (HALAMAN HASIL AKHIR)
+       ========================================================= */
+    .result-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-bottom: 24px;
+    }
+
+    /* Result Persona Card */
+    .result-hero-card {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F5FBFB 100%);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 26px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .result-hero-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #38A169 0%, #00ACC1 50%, #064049 100%);
+    }
+
+    .persona-score-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--mint-surface);
+      border: 1px solid rgba(10, 108, 116, 0.2);
+      border-radius: var(--radius-full);
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--teal-primary);
+      margin-bottom: 16px;
+    }
+
+    .mascot-image-wrapper {
+      margin: 8px auto 16px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 150px;
+    }
+
+    .mascot-image-wrapper img {
+      width: 150px;
+      height: auto;
+      max-height: 160px;
+      object-fit: contain;
+      margin: 0 auto;
+      filter: drop-shadow(0 8px 18px rgba(6, 64, 73, 0.15));
+      animation: floatMascot 3s ease-in-out infinite;
+    }
+
+    @keyframes floatMascot {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .persona-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--teal-dark);
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .persona-description {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-dark);
+      font-weight: 500;
+      padding: 0 4px;
+    }
+
+    /* 1. KOTAK LCI FUN FACT 💡 */
+    .funfact-card {
+      background: linear-gradient(135deg, #094750 0%, #0E5C66 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 20px 18px;
+      box-shadow: 0 10px 24px rgba(6, 64, 73, 0.16);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .funfact-card::after {
+      content: "💡";
+      position: absolute;
+      right: -10px;
+      bottom: -15px;
+      font-size: 80px;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .funfact-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #FFE680;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .funfact-body {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #E6F7F8;
+      font-weight: 500;
+    }
+
+    /* 2. CTA IG & HADIAH */
+    .cta-ig-card {
+      background: linear-gradient(135deg, #FFFDF5 0%, #F0FDF4 100%);
+      border: 2px dashed #34D399;
+      border-radius: var(--radius-md);
+      padding: 20px 18px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-ig-badge {
+      align-self: center;
+      background: #D1FAE5;
+      color: #065F46;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.5px;
+    }
+
+    .cta-ig-text {
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 700;
+      color: var(--teal-dark);
+    }
+
+    .cta-ig-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+    .btn-ig-tag {
+      background: linear-gradient(45deg, #E1306C, #F77737);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(225, 48, 108, 0.25);
+      transition: transform 0.2s ease;
+    }
+
+    .btn-ig-tag:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-copy-story {
+      background: var(--white);
+      border: 1px solid var(--border-soft);
+      color: var(--teal-dark);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-copy-story:hover {
+      background: var(--mint-surface);
+      border-color: var(--teal-primary);
+    }
+
+    /* 4. TOMBOL MAIN LAGI */
+    .btn-restart {
+      width: 100%;
+      background: var(--white);
+      border: 2px solid var(--teal-primary);
+      color: var(--teal-primary);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all var(--transition-normal);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-restart:hover {
+      background: var(--mint-surface);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-restart:active {
+      transform: translateY(0);
+    }
+
+    /* 3. CTA BUSINESS / WEBSITE (BAGIAN PALING BAWAH) */
+    .cta-business-footer {
+      text-align: center;
+      padding: 16px 12px 6px 12px;
+      border-top: 1px solid var(--border-soft);
+      margin-top: 4px;
+    }
+
+    .cta-business-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .cta-business-text a {
+      color: var(--teal-primary);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s ease;
+    }
+
+    .cta-business-text a:hover {
+      color: var(--teal-light);
+    }
+
+    /* Toast Notification for Copy */
+    .toast-pill {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(50px);
+      background: var(--teal-dark);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 100;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toast-pill.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* Confetti Canvas */
+    #confettiCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 15;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-viewport">
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Header Navigation & Event Identity -->
+    <header class="app-header">
+      <div class="header-top">
+        <div class="brand-tag-wrapper">
+          <div class="brand-logo-circle">
+            <img src="logo-lci.svg" alt="Life Cycle Indonesia Logo" class="brand-logo-img" />
+          </div>
+          <div class="brand-text-block">
+            <span class="event-badge">Life Cycle Indonesia</span>
+            <span class="app-title-header">Cek Eco-Persona Kamu!</span>
+          </div>
+        </div>
+        <div class="header-pill" id="headerStepIndicator">Kuis Singkat</div>
+      </div>
+
+      <!-- Top Progress Indicator (Shown during quiz) -->
+      <div class="progress-section" id="progressSection" style="display: none;">
+        <div class="progress-meta">
+          <span id="questionStepText">Pertanyaan 1 dari 5</span>
+          <span id="questionPercentText">20%</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progressBarFill"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- App Main Container -->
+    <main class="app-main">
+
+      <!-- ==========================================
+           1. WELCOME VIEW
+           ========================================== -->
+      <section id="welcomeView" class="view-container active">
+        <div class="welcome-card">
+          <div class="mascot-avatar-hero">
+            <img 
+              src="maskot-greenflag.png" 
+              alt="Maskot Lifecycle Indonesia" 
+              onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2244%22 fill=%22%23E6F8F6%22 stroke=%22%230A6C74%22 stroke-width=%224%22/><circle cx=%2238%22 cy=%2244%22 r=%225%22 fill=%22%23042D34%22/><circle cx=%2262%22 cy=%2244%22 r=%225%22 fill=%22%23042D34%22/><path d=%22M 40 58 Q 50 68 60 58%22 stroke=%22%23042D34%22 stroke-width=%224%22 stroke-linecap=%22round%22 fill=%22none%22/></svg>';"
+            />
+          </div>
+          <span class="welcome-tag">Special Event Edition</span>
+          <h1 class="welcome-title">Seberapa Membumi Gaya Hidupmu? 🌍</h1>
+          <p class="welcome-subtitle">
+            Cari tahu persona ramah lingkunganmu lewat 5 pertanyaan santai seputar kebiasaan sehari-hari dan dapatkan hadiah di booth Lifecycle Indonesia!
+          </p>
+
+          <button id="btnStartQuiz" class="btn-primary" type="button">
+            Mulai Kuis Sekarang ✨
+          </button>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           2. QUESTION VIEW (Dynamic Question Card)
+           ========================================== -->
+      <section id="questionView" class="view-container">
+        <div class="question-card">
+          <div class="question-header">
+            <span class="q-step-badge" id="badgeStep">Pertanyaan 1/5</span>
+            <h2 class="question-text" id="questionTitle">Pertanyaan di sini...</h2>
+          </div>
+
+          <div class="options-list" id="optionsContainer">
+            <!-- Options populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           3. RESULT VIEW (Halaman Hasil Akhir)
+           ========================================== -->
+      <section id="resultView" class="view-container">
+        <div class="result-container">
+
+          <!-- Persona Card: [Gambar Maskot] -> [Judul Persona] -> [Deskripsi] -->
+          <div class="result-hero-card">
+            <div class="persona-score-chip">
+              <span>🌱</span>
+              <span id="scoreDisplay">Total Skor: 14 Poin</span>
+            </div>
+
+            <!-- Dynamic Mascot Container -->
+            <div class="mascot-image-wrapper" id="mascotWrapper">
+              <!-- Injected dynamically with exact requested img tag -->
+            </div>
+
+            <h2 class="persona-title" id="personaTitle">Judul Persona</h2>
+            <p class="persona-description" id="personaDescription">Deskripsi persona...</p>
+          </div>
+
+          <!-- 1. Kotak "LCI Fun Fact 💡" (WAJIB ADA) -->
+          <div class="funfact-card">
+            <div class="funfact-header">
+              <span>💡</span>
+              <span>LCI Fun Fact</span>
+            </div>
+            <div class="funfact-body">
+              Tahukah Kamu? Mencuci baju pakai air dingin vs air hangat bisa menghemat energi listrik dan memangkas jejak karbon hingga 68% lho! Hal kecil, dampak besar.
+            </div>
+          </div>
+
+          <!-- 2. CTA IG & Hadiah (WAJIB ADA) -->
+          <div class="cta-ig-card">
+            <span class="cta-ig-badge">🎁 SPECIAL GIVEAWAY BOOTH LCI</span>
+            <p class="cta-ig-text">
+              📸 Screenshot hasil ini, post di IG Story-mu, follow & tag @lifecycleindo, dan klaim hadiah menarik kamu di booth LCI sekarang!
+            </p>
+            <div class="cta-ig-actions">
+              <a href="https://www.instagram.com/lifecycleindo" target="_blank" rel="noopener noreferrer" class="btn-ig-tag">
+                <span>📸</span> Buka Instagram @lifecycleindo
+              </a>
+              <button id="btnCopyText" class="btn-copy-story" type="button">
+                <span>📋</span> Salin Hasil
+              </button>
+            </div>
+          </div>
+
+          <!-- 4. Tombol "Main Lagi" -->
+          <button id="btnRestartQuiz" class="btn-restart" type="button">
+            <span>🔄</span> Main Lagi
+          </button>
+
+          <!-- 3. CTA Business/Website: Teks kecil elegan di bagian paling bawah (WAJIB ADA) -->
+          <div class="cta-business-footer">
+            <p class="cta-business-text">
+              Want to know the carbon footprint of your business? Contact us at <a href="https://www.lifecycleindonesia.com" target="_blank" rel="noopener noreferrer">www.lifecycleindonesia.com</a>
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Toast Feedback -->
+  <div id="toast" class="toast-pill">Teks hasil kuis berhasil disalin! ✅</div>
+
+  <!-- =========================================================
+       VANILLA JAVASCRIPT LOGIC
+       ========================================================= -->
+  <script>
+    (function () {
+      'use strict';
+
+      // 1. DATA PERTANYAAN & SISTEM POIN RAHASIA (A=1, B=2, C=3)
+      const QUIZ_QUESTIONS = [
+        {
+          id: 1,
+          question: "Waktunya ngopi cantik sebelum mulai aktivitas! Kamu biasanya...",
+          options: [
+            { key: "A", points: 1, text: "Beli kopi susu gula aren di jalan, full pakai cup dan sedotan plastik." },
+            { key: "B", points: 2, text: "Pesan ojol, tapi request \"nggak usah pakai alat makan/sedotan plastik, Mas\"." },
+            { key: "C", points: 3, text: "Bawa tumbler andalan dari rumah, sekalian dapat diskon bawa botol sendiri di kafe." }
+          ]
+        },
+        {
+          id: 2,
+          question: "Lagi scroll e-commerce terus lihat ada diskon tanggal kembar. Reaksi kamu?",
+          options: [
+            { key: "A", points: 1, text: "Langsung check-out 5 baju baru! Mumpung murah, kapan lagi?" },
+            { key: "B", points: 2, text: "Beli 1 baju aja yang emang lagi butuh, atau cari di toko thrift." },
+            { key: "C", points: 3, text: "Tutup aplikasi. Baju di lemari masih banyak yang bisa di-mix & match." }
+          ]
+        },
+        {
+          id: 3,
+          question: "Waktu lagi me-time di kamar pas weekend, kebiasaan kamu gimana?",
+          options: [
+            { key: "A", points: 1, text: "AC nyala 16 derajat full seharian, lampu nyala biarpun siang bolong, sambil marathon drakor." },
+            { key: "B", points: 2, text: "AC dimatikan kalau lagi nggak di kamar, tapi charger HP dibiarin nancep terus di stop kontak." },
+            { key: "C", points: 3, text: "Buka jendela biar dapat cahaya dan angin alami, dan cuma nyalain lampu pas beneran gelap." }
+          ]
+        },
+        {
+          id: 4,
+          question: "Jam makan siang tiba! Pilihan menu kamu hari ini jatuh pada...",
+          options: [
+            { key: "A", points: 1, text: "Junk food pesan lewat ojol, dibungkus plastik rangkap 3 plus alat makan sekali pakai." },
+            { key: "B", points: 2, text: "Beli makanan di kantin, tapi minumnya tetap es kopi/teh manis di cup plastik kemasan." },
+            { key: "C", points: 3, text: "Bawa bekal sendiri dari rumah pakai kotak makan dan tumbler." }
+          ]
+        },
+        {
+          id: 5,
+          question: "Habis jajan atau nerima paket belanjaan, barang bekas dan sampahnya kamu apain?",
+          options: [
+            { key: "A", points: 1, text: "Ya langsung masukin tong sampah laah, semua dicampur jadi satu, praktis!" },
+            { key: "B", points: 2, text: "Mulai misahin sampah plastik sama organik sih, tapi bingung habis itu plastiknya mau dikasih ke mana." },
+            { key: "C", points: 3, text: "Rajin dipilah, dibersihin, terus disetor ke bank sampah atau aplikasi daur ulang terdekat. Circularity is my middle name!" }
+          ]
+        }
+      ];
+
+      // 2. HASIL PERSONA SESUAI RENTANG POIN & TEKS SPESIFIK
+      const PERSONA_RESULTS = {
+        greenFlag: {
+          minScore: 12,
+          maxScore: 15,
+          imageHtml: '<img src="maskot-greenflag.png" alt="Maskot Senang" style="width:150px; margin: 0 auto;">',
+          title: "Si Paling Green Flag 🌿",
+          description: "Selamat! Kamu adalah teman kencan idaman Bumi. Gaya hidupmu udah membumi dan jejak karbonmu rendah banget. Lanjutkan terus!"
+        },
+        tanggung: {
+          minScore: 8,
+          maxScore: 11,
+          imageHtml: '<img src="maskot-tanggung.png" alt="Maskot Berpikir" style="width:150px; margin: 0 auto;">',
+          title: "Sobat Eco-Tanggung 🐢",
+          description: "Niatnya sih udah Go Green, tapi eksekusinya kadang masih maju-mundur pas lihat diskonan. Yuk, sedikit lagi bisa jadi Green Flag!"
+        },
+        khilaf: {
+          minScore: 5,
+          maxScore: 7,
+          imageHtml: '<img src="maskot-khilaf.png" alt="Maskot Kaget" style="width:150px; margin: 0 auto;">',
+          title: "Kaum Eco-Khilaf 🚨",
+          description: "Waduh, jejak karbonmu lumayan tinggi nih! Kayaknya masih sering khilaf pakai plastik dan boros energi. Yuk, mulai sadar diri!"
+        }
+      };
+
+      // 3. APPLICATION STATE
+      let currentQuestionIndex = 0;
+      let totalPoints = 0;
+      let userAnswers = [];
+      let isTransitioning = false;
+
+      // DOM Elements
+      const welcomeView = document.getElementById('welcomeView');
+      const questionView = document.getElementById('questionView');
+      const resultView = document.getElementById('resultView');
+
+      const progressSection = document.getElementById('progressSection');
+      const progressBarFill = document.getElementById('progressBarFill');
+      const questionStepText = document.getElementById('questionStepText');
+      const questionPercentText = document.getElementById('questionPercentText');
+      const headerStepIndicator = document.getElementById('headerStepIndicator');
+
+      const badgeStep = document.getElementById('badgeStep');
+      const questionTitle = document.getElementById('questionTitle');
+      const optionsContainer = document.getElementById('optionsContainer');
+
+      const mascotWrapper = document.getElementById('mascotWrapper');
+      const personaTitle = document.getElementById('personaTitle');
+      const personaDescription = document.getElementById('personaDescription');
+      const scoreDisplay = document.getElementById('scoreDisplay');
+
+      const btnStartQuiz = document.getElementById('btnStartQuiz');
+      const btnRestartQuiz = document.getElementById('btnRestartQuiz');
+      const btnCopyText = document.getElementById('btnCopyText');
+      const toast = document.getElementById('toast');
+
+      // 4. VIEW CONTROLLER
+      function switchView(targetView) {
+        [welcomeView, questionView, resultView].forEach(function (v) {
+          v.classList.remove('active');
+        });
+
+        // Add active after slight tick for CSS transition
+        setTimeout(function () {
+          targetView.classList.add('active');
+        }, 30);
+      }
+
+      // 5. START QUIZ
+      function startQuiz() {
+        currentQuestionIndex = 0;
+        totalPoints = 0;
+        userAnswers = [];
+        progressSection.style.display = 'block';
+        headerStepIndicator.textContent = "Pertanyaan 1/5";
+        switchView(questionView);
+        renderQuestion(currentQuestionIndex);
+      }
+
+      // 6. RENDER CURRENT QUESTION
+      function renderQuestion(index) {
+        isTransitioning = false;
+        const q = QUIZ_QUESTIONS[index];
+        const stepNum = index + 1;
+        const totalQ = QUIZ_QUESTIONS.length;
+        const percent = Math.round((stepNum / totalQ) * 100);
+
+        // Update progress bar
+        progressBarFill.style.width = percent + '%';
+        questionStepText.textContent = 'Pertanyaan ' + stepNum + ' dari ' + totalQ;
+        questionPercentText.textContent = percent + '%';
+        headerStepIndicator.textContent = 'Pertanyaan ' + stepNum + '/' + totalQ;
+        badgeStep.textContent = 'Pertanyaan ' + stepNum + '/' + totalQ;
+
+        // Update question text
+        questionTitle.textContent = q.question;
+
+        // Render options
+        optionsContainer.innerHTML = '';
+        q.options.forEach(function (opt) {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'option-btn';
+          btn.setAttribute('data-points', opt.points);
+          btn.setAttribute('data-key', opt.key);
+
+          btn.innerHTML = 
+            '<div class="option-letter">' + opt.key + '</div>' +
+            '<div class="option-text">' + opt.text + '</div>';
+
+          btn.addEventListener('click', function () {
+            handleSelectOption(btn, opt.points, opt.key);
+          });
+
+          optionsContainer.appendChild(btn);
+        });
+      }
+
+      // 7. HANDLE OPTION SELECTION
+      function handleSelectOption(selectedButton, points, key) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        // Haptic feedback if available
+        if (navigator.vibrate) {
+          try { navigator.vibrate(12); } catch (e) {}
+        }
+
+        // Mark UI as selected
+        const allButtons = optionsContainer.querySelectorAll('.option-btn');
+        allButtons.forEach(function (b) {
+          b.classList.remove('selected');
+        });
+        selectedButton.classList.add('selected');
+
+        // Accumulate points
+        totalPoints += points;
+        userAnswers.push({ questionId: QUIZ_QUESTIONS[currentQuestionIndex].id, key: key, points: points });
+
+        // Smooth transition to next question or result after 380ms
+        setTimeout(function () {
+          currentQuestionIndex++;
+          if (currentQuestionIndex < QUIZ_QUESTIONS.length) {
+            renderQuestion(currentQuestionIndex);
+          } else {
+            showResult();
+          }
+        }, 380);
+      }
+
+      // 8. SHOW RESULT PAGE
+      function showResult() {
+        progressSection.style.display = 'none';
+        headerStepIndicator.textContent = "Hasil Kuis 🎉";
+
+        // Determine persona based on total points
+        let resultData;
+        if (totalPoints >= 12) {
+          resultData = PERSONA_RESULTS.greenFlag;
+        } else if (totalPoints >= 8) {
+          resultData = PERSONA_RESULTS.tanggung;
+        } else {
+          resultData = PERSONA_RESULTS.khilaf;
+        }
+
+        // Set Persona details exactly as requested
+        mascotWrapper.innerHTML = resultData.imageHtml;
+        personaTitle.textContent = resultData.title;
+        personaDescription.textContent = resultData.description;
+        scoreDisplay.textContent = 'Total Skor: ' + totalPoints + ' / 15 Poin';
+
+        // Add error handling to mascot image to guarantee it never appears broken
+        const mascotImg = mascotWrapper.querySelector('img');
+        if (mascotImg) {
+          mascotImg.onerror = function () {
+            this.onerror = null;
+            // Fallback cute SVG avatar
+            const isHappy = totalPoints >= 12;
+            const isMedium = totalPoints >= 8 && totalPoints < 12;
+            const mouthPath = isHappy 
+              ? 'M 35 56 Q 50 72 65 56' 
+              : (isMedium ? 'M 38 60 Q 50 55 62 60' : 'M 44 60 A 6 6 0 1 0 56 60 A 6 6 0 1 0 44 60');
+            this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="%23E6F8F6" stroke="%230A6C74" stroke-width="4"/><path d="M 12 50 A 38 38 0 0 1 50 12" stroke="%2338A169" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M 50 12 A 38 38 0 0 1 88 50" stroke="%2300ACC1" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M 88 50 A 38 38 0 0 1 50 88" stroke="%23064049" stroke-width="8" fill="none" stroke-linecap="round"/><circle cx="36" cy="44" r="5" fill="%23064049"/><circle cx="64" cy="44" r="5" fill="%23064049"/><path d="' + mouthPath + '" stroke="%23064049" stroke-width="4" stroke-linecap="round" fill="none"/></svg>';
+          };
+        }
+
+        switchView(resultView);
+
+        // Trigger confetti celebration
+        triggerConfetti();
+
+        // Scroll to top smoothly
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // 9. COPY SHARE TEXT FOR IG STORY
+      function copyResultForShare() {
+        let resultTitle = personaTitle.textContent;
+        let shareText = 
+          "🌿 Cek Eco-Persona Kamu! - Langkah Membumi Market\n" +
+          "Aku dapat persona: " + resultTitle + " (Skor: " + totalPoints + "/15)\n" +
+          "Ikutan kuisnya dan klaim hadiah menarik di booth @lifecycleindo! 🎁✨\n" +
+          "🌐 www.lifecycleindonesia.com";
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(shareText).then(function () {
+            showToast("Teks hasil kuis berhasil disalin! Siap untuk IG Story 📸");
+          }).catch(function () {
+            fallbackCopy(shareText);
+          });
+        } else {
+          fallbackCopy(shareText);
+        }
+      }
+
+      function fallbackCopy(text) {
+        const tempInput = document.createElement('textarea');
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        try {
+          document.execCommand('copy');
+          showToast("Teks hasil kuis berhasil disalin! 📸");
+        } catch (err) {
+          showToast("Silakan screenshot layar untuk IG Story! 📸");
+        }
+        document.body.removeChild(tempInput);
+      }
+
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(function () {
+          toast.classList.remove('show');
+        }, 2600);
+      }
+
+      // 10. RESTART QUIZ
+      function restartQuiz() {
+        startQuiz();
+      }
+
+      // 11. LIGHTWEIGHT CELEBRATION CONFETTI (Pure Vanilla JS Canvas)
+      function triggerConfetti() {
+        const canvas = document.getElementById('confettiCanvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const container = canvas.parentElement;
+
+        canvas.width = container.clientWidth || 480;
+        canvas.height = container.clientHeight || 800;
+
+        const colors = ['#00ACC1', '#38A169', '#34D399', '#064049', '#FFB703', '#A7F3D0'];
+        const particles = [];
+        const count = 45;
+
+        for (let i = 0; i < count; i++) {
+          particles.push({
+            x: Math.random() * canvas.width,
+            y: -10 - Math.random() * 50,
+            w: 7 + Math.random() * 7,
+            h: 5 + Math.random() * 5,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            vx: (Math.random() - 0.5) * 4,
+            vy: 2 + Math.random() * 4,
+            rotation: Math.random() * 360,
+            vr: (Math.random() - 0.5) * 10,
+            opacity: 1
+          });
+        }
+
+        let animationFrame;
+        let startTime = Date.now();
+
+        function animate() {
+          const elapsed = Date.now() - startTime;
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          particles.forEach(function (p) {
+            p.x += p.vx;
+            p.y += p.vy;
+            p.rotation += p.vr;
+
+            if (elapsed > 1800) {
+              p.opacity -= 0.02;
+            }
+
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate((p.rotation * Math.PI) / 180);
+            ctx.globalAlpha = Math.max(0, p.opacity);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+            ctx.restore();
+          });
+
+          if (elapsed < 3000) {
+            animationFrame = requestAnimationFrame(animate);
+          } else {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            cancelAnimationFrame(animationFrame);
+          }
+        }
+
+        animate();
+      }
+
+      // 12. EVENT LISTENERS
+      btnStartQuiz.addEventListener('click', startQuiz);
+      btnRestartQuiz.addEventListener('click', restartQuiz);
+      btnCopyText.addEventListener('click', copyResultForShare);
+
+    })();
+  </script>
+</body>
+</html>
